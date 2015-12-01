@@ -1,0 +1,9 @@
+body {
+	background:#f8f8f8;
+	background-image:url('../images/tiles-02.png');
+	font-family:'montserrat', arial;
+}
+
+h1 {
+  color:darkblue
+}
