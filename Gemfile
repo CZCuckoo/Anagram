@@ -3,7 +3,7 @@ ruby '2.2.3'
 
 gem 'activerecord'
 gem 'pg'
-
+gem 'puma'
 gem 'rspec'
 gem 'faker'
 gem 'sinatra'
