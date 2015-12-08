@@ -7,11 +7,9 @@ class Word < ActiveRecord::Base
     @anagrams = []
     @combinations.each do |combo|
       if Word.find_by_text(combo).present?
-        puts "#{combo} => #{Word.find_by_text(combo).inspect}"
         @anagrams << combo
       end
     end
-
     @anagrams
   end
 
