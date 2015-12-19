@@ -15,8 +15,7 @@ end
 
 get '/anagrams/:word' do
   @word = params[:word]
-  word_array = @word.chars.sort
-  alphabetized_string = word_array.join
+  alphabetized_string = @word.chars.sort.join
   @anagrams = Word.where("letters=?", alphabetized_string)
   erb :show
 end
