@@ -1,2 +1,0 @@
-# Anagram
-My anagram app
