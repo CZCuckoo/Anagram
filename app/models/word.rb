@@ -1,29 +1,34 @@
 class Word < ActiveRecord::Base
 
     def self.find_anagrams(string)
-      # Convert word to an array of letters
       letters = string.split(//)
-
-      # Create an array to store our anagrams
-      anagrams = []
-
-      # Loop through each letter in letters
+      @combinations = []
       letters.each do |letter|
-        # Select the remaining letters
         remaining = letters.select { |l| l != letter }
-
-        # Create a new word by combining the letter + the remaining letters
-        # Add new word to anagrams array
-        anagrams << letter + remaining.join('')
-
-        # Create a new word by combining the letter + the reverse of the remaining letters
-        # Add new word to anagrams array
-        anagrams << letter + reverse_letters(remaining).join('')
+        @combinations << letter + remaining.join('')
+        @combinations << letter + reverse_letters(remaining).join('')
       end
-
-      # Return anagrams array
-      anagrams
+        @anagrams = []
+      @combinations.each do |combo|
+        if Word.find_by_text(combo).present?
+          @anagrams << combo
+        end
+      end
+      @anagrams
     end
+
+    # def self.find_anagrams(string)
+    #   letters = string.split(//)
+    #   anagrams = []
+    #   letters.each do |letter|
+    #     remaining = letters.select { |l| l != letter }
+    #     anagrams << letter + remaining.join('')
+    #     anagrams << letter + reverse_letters(remaining).join('')
+    #   end
+    #   anagrams
+    # end
+
+
 
     def self.reverse_letters(letters)
       # create a new array of 2 items
