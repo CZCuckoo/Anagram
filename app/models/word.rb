@@ -17,19 +17,6 @@ class Word < ActiveRecord::Base
       @anagrams
     end
 
-    # def self.find_anagrams(string)
-    #   letters = string.split(//)
-    #   anagrams = []
-    #   letters.each do |letter|
-    #     remaining = letters.select { |l| l != letter }
-    #     anagrams << letter + remaining.join('')
-    #     anagrams << letter + reverse_letters(remaining).join('')
-    #   end
-    #   anagrams
-    # end
-
-
-
     def self.reverse_letters(letters)
       # create a new array of 2 items
       length = letters.length
