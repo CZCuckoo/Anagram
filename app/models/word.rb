@@ -8,7 +8,7 @@ class Word < ActiveRecord::Base
         @combinations << letter + remaining.join('')
         @combinations << letter + reverse_letters(remaining).join('')
       end
-        @anagrams = []
+      @anagrams = []
       @combinations.each do |combo|
         if Word.find_by_text(combo).present?
           @anagrams << combo
