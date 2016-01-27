@@ -3,5 +3,5 @@ class CreateWords < ActiveRecord::Migration
     create_table :words do |t|
       t.string :text
      end
-  end
+  # end
 end
