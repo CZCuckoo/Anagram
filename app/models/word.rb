@@ -41,12 +41,6 @@ class Word < ActiveRecord::Base
   end
 
 
-#
-
-#
-
-#
-#
 #   def self.find_anagrams(string)
 #     @anagrams = string.split(//)
 #     @anagrams = @anagrams.permutation.map(&:join)

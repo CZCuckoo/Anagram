@@ -2,7 +2,7 @@
 <ul class="anagrams">
     <% if !@anagrams.nil? %>
       <% @anagrams.each do |word| %>
-        <li><%= "#{word}" %></li>
+        <li><%= "#{word.text}" %></li>
       <% end %>
     <% end %>
 </ul>
