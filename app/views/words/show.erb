@@ -1,0 +1,9 @@
+<h1>Words</h1>
+
+<% @word.each do |list| %>
+  <h3><%= "#{list.id}" %></h1>
+    <ul>
+      <li><%= "#{list.text}" %></li>
+      <li><%= "#{list.letters}" %></li>
+    </ul>
+<% end %>
